@@ -1,0 +1,9 @@
+<% @shouts.each do |shout| %>
+  <div>
+    <%= link_to shout.username, shout.user %>
+    <%= shout.body %>
+    <%= link_to shout do %>
+      <%= time_ago_in_words shout.created_at %> ago
+  <% end %>
+  </div>
+<% end %>
