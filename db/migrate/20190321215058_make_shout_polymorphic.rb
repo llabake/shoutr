@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MakeShoutPolymorphic < ActiveRecord::Migration[5.2]
   class Shout < ApplicationRecord
     belongs_to :content, polymorphic: true
@@ -8,7 +10,7 @@ class MakeShoutPolymorphic < ActiveRecord::Migration[5.2]
     change_table(:shouts) do |t|
       t.string :content_type
       t.integer :content_id
-      t.index [:content_type, :content_id]
+      t.index %i[content_type content_id]
     end
 
     reversible do |dir|
