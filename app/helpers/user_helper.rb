@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module UserHelper
   def follow_button(user)
     if current_user.following?(user)
